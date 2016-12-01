@@ -1,5 +1,23 @@
 body{
-	background-image: url("../assets/greyzz.png");
-	background-repeat: repeat;
+	background-color: #F5F5F5;
 	text-align: center;
+	padding: 20px;
+}
+
+h1{
+	padding-bottom: 20px;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    background-color: #fff;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.card-caption {
+    padding: 2px 16px;
 }
