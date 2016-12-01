@@ -21,3 +21,11 @@ h1{
 .card-caption {
     padding: 2px 16px;
 }
+
+.floating-logo{
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	height: 80px;
+	z-index: 1;
+}
