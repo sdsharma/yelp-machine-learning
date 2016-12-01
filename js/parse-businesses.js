@@ -20,4 +20,5 @@ for(var i = 0; i < chosenCities.length; i++){
 			return console.log(err);
 		}
 	});
+	businesses = {};
 }
