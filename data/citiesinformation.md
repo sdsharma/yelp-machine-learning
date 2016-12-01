@@ -10,15 +10,15 @@
 * Population: 1,513,000
 * Number of Businesses: 11,852 
 
-###Pittsburgh, Pennsylvania
-* Population: 305,841
-* Number of Businesses: 3,628
+###Charlotte, North Carolina
+* Population: 789,862
+* Number of Businesses: 5,695
 
 ##Small Cities/Suburban Areas
 
-###Dollard-Des-Ormeaux, Quebec, Canada
-* Population: 49,637
-* Number of Businesses: 80
+###Carnegie, Pennsylvania
+* Population: 7,947
+* Number of Businesses: 62
 
 ###San Tan Valley, Arizona
 * Population: 81,231
