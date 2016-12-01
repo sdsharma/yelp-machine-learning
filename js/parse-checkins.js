@@ -1,4 +1,4 @@
-/*Create a usable dat format of {businessid: total checkins}*/
+/*Create a usable data format of {businessid: total checkins}*/
 var fs = require('fs');
 
 var checkIns = {};
