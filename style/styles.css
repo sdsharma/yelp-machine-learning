@@ -47,6 +47,7 @@ li{
     transition: 0.3s;
     background-color: #fff;
     padding: 8px;
+    margin-bottom: 20px;
 }
 
 .card:hover {
@@ -74,7 +75,4 @@ h3{
 }
 code{
   text-align: left;
-}
-.row{
-  padding-bottom: 20px;
 }

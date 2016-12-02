@@ -76,8 +76,7 @@
           <p>From this sample provided by Yelp, what we can see is that the check-ins file provides a daily breakdown at hourly time intervals to show the checkins that occured throughout the week on each day and time in the entire businesses history of being on Yelp. Out of this information what we en dup being most concerned in is the encypted business id (business_id) which allows us to uniquely identify a business and the sum total of all the checkins that occur throughout the history of the business which can be pulled from the array representing the breakdown of all check-in information (checkin_info).</p>
           </div>
           <div class="col-lg-8 col-md-8">
-          <pre><code>
-{
+          <pre><code>{
   'type': 'checkin',
   'business_id': (encrypted business id),
   'checkin_info': {
@@ -88,8 +87,7 @@
       ...
       '23-6': (number of checkins from 23:00 to 00:00 on all Saturdays)
   }, # if there was no checkin for a hour-day block it will not be in the dict
-}
-          </code></pre>
+}</code></pre>
           </div>
           </div>  
           </div>
@@ -103,8 +101,7 @@
           <div class="card-caption">
           <div class="row">
           <div class="col-lg-8 col-md-8">
-            <pre><code>
-{
+            <pre><code>{
   'type': 'business',
   'business_id': (encrypted business id),
   'name': (business name),
@@ -129,8 +126,7 @@
       (attribute_name): (attribute_value),
       ...
   },
-}
-            </code></pre>
+}</code></pre>
             </div>
             <div class="col-lg-4 col-md-4">
                 <p>From this sample provided by Yelp, what we can see is that the businesses file provides basic information like the type of business its name, neighborhood, address, city, state, etc. But for our project the main concern was the encrypted business id (business_id), the city (city), the business ratings (stars), and the amount of reviews provided for the restaurant (review_count). From this information we can get identify a business in a specific city that we have chosen to represent either a large metropolitan area or smaller suburban township, and map that to the number of check-ins that have been logged, as well as provide the corresponding rating and review count totals.</p>
@@ -153,8 +149,7 @@
          <div class="card process">
           <h3>5. Parsing the Check-ins</h3>
           <div class="card-caption">
-            <pre><code>
-/*Create a usable data format of {businessid: total checkins}*/
+            <pre><code>/*Create a usable data format of {businessid: total checkins}*/
 var fs = require('fs');
 
 var checkIns = {};
@@ -174,8 +169,7 @@ fs.writeFile('../data/yelp_checkins.json', JSON.stringify(checkIns, null, 2), fu
   if(err){
     return console.log(err);
   }
-});
-            </code></pre>
+});</code></pre>
           </div>
       </div>
       </div>
@@ -183,8 +177,7 @@ fs.writeFile('../data/yelp_checkins.json', JSON.stringify(checkIns, null, 2), fu
          <div class="card process">
           <h3>6. Parsing the Businesses</h3>
           <div class="card-caption">
-            <pre><code>
-/*Create a usable data format of {businessid: [rating, review count, checkin count]}*/
+            <pre><code>/*Create a usable data format of {businessid: [rating, review count, checkin count]}*/
 var fs = require('fs');
 
 var businesses = {};
@@ -199,8 +192,7 @@ fs.writeFile('../data/yelp_businesses_all.json', JSON.stringify(businesses, null
   if(err){
     return console.log(err);
   }
-});
-            </code></pre>
+});</code></pre>
             <p>Data split by cities script <a href="https://github.com/sdsharma/yelp-machine-learning/blob/master/js/parse-businesses.js">here</a>.</p>
           </div>
       </div>
@@ -209,8 +201,7 @@ fs.writeFile('../data/yelp_businesses_all.json', JSON.stringify(businesses, null
          <div class="card process">
           <h3>7. Parsing the JSON</h3>
           <div class="card-caption">
-            <pre><code>
-function return_mat = RemoveNulls(input)
+            <pre><code>function return_mat = RemoveNulls(input)
   result_cells = struct2cell(input(1,1));
   return_mat = [];
   for i=1:length(result_cells)
@@ -222,8 +213,7 @@ function return_mat = RemoveNulls(input)
     end
     return_mat = [return_mat; cell];
   end
-end
-            </code></pre>
+end</code></pre>
           </div>
       </div>
       <br />
