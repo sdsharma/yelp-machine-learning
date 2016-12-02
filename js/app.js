@@ -28,3 +28,8 @@ var options = {
 var container = document.getElementById('chart');
 var graph3d = new vis.Graph3d(container, data, options);
 hljs.initHighlightingOnLoad();
+
+$(document).on('click', '[data-toggle="lightbox"]', function(event) {
+    event.preventDefault();
+    $(this).ekkoLightbox();
+});
