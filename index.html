@@ -486,6 +486,17 @@ end</code></pre>
         </div>
       </div>
     </div>
+
+    <div class="row wow fadeInUp">
+      <div class="col-lg-12 col-md-12">
+         <div class="card process">
+         <h3>Project Postmortem</h3>
+          <div class="card-caption">
+            <p>Throughout our project we experienced several problems in conducting our algorithms. Our first problem was that though the Yelp data set was supposed to be in a JSON format, the actual contents of the data set were not formatted correctly placing extra work on us to parse through the data into a readable MATLAB format. Our solution to fix this problem was to use three separate parsing algorithms, one for parsing through associated business id’s and check-ins along with the check-in data, another for parsing through associated business id’s and reviews and ratings, and another for associating the business id’s with all of the other variables. This was an extremely difficult challenge for us to overcome, as the data was additionally formatted horribly. For example, Las Vegas had eight different identifiers(Las Vegas, las vegas, las Vegas, NV) which made it difficult to condense into one identifier given the other set of difficulties we had in the JSON file. Our second problem that we encountered was us dealing with buggy MATLAB builds that made our code not work despite it being syntactically correct. We had to restart MATLAB to resolve this. We found that our original data sub-sections did not display any obvious trends, so we decided to combine all of categories to find overall patterns in the biggest possible scope. This meant combining all city data into one large aggregate. We also tried to plot the data over 3 dimensions, but the result was nothing of significant value.</p>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- Including Bootstrap JS (with its jQuery dependency) so that dynamic components work -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
