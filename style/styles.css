@@ -31,13 +31,13 @@ h1{
 	z-index: 1;
 }
 
-.chart div {
+/*.chart div {
   background-color: steelblue;
   text-align: right;
   padding: 3px;
   margin: 1px;
   color: white;
-}
+}*/
 
 .process{
   padding-top: 2px;
