@@ -4,8 +4,34 @@ body{
 	padding: 20px;
 }
 
+h1,h2,h3,h4,h5,h6{
+  font-family: Oswald;
+}
+
 h1{
 	padding-bottom: 20px;
+  text-decoration: underline; 
+}
+
+h2{
+  padding-bottom: 20px;
+  text-decoration: underline; 
+}
+
+h5{
+  font-size: 18px;
+}
+h6{
+  font-size: 16px;
+}
+
+p{
+  font-size: 16px;
+  font-family: Lato;
+}
+
+li{
+  font-size: 16px;
 }
 
 .card {
@@ -30,14 +56,6 @@ h1{
 	height: 100px;
 	z-index: 1;
 }
-
-/*.chart div {
-  background-color: steelblue;
-  text-align: right;
-  padding: 3px;
-  margin: 1px;
-  color: white;
-}*/
 
 .process{
   padding-top: 2px;
