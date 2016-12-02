@@ -290,36 +290,53 @@ end</code></pre>
 
     <div class="row wow fadeInUp">
     <h2>Full Dataset K-Means</h2>
+    <div class="col-lg-4 col-md-4">
+        <div class="card process">
+          <a href="assets/k-means/Rating%20vs%20%23%20of%20Reviews.png" data-toggle="lightbox">
+          <img src = "assets/k-means/Rating%20vs%20%23%20of%20Reviews.png" style="width:100%;" />
+          </a>
+          <div class="card-caption">
+            <h6>K-Means Plot of the ratings of each of the business versus the number of reviews for the entire dataset.</h6>
+            <p style="font-style: italic;">
+            1st cluster - 3.8602, 968.0172, K = 2<br />
+            2nd cluster - 3.6937 27.9724, K = 23
+            </p>
+            <p>For the first cluster of data there seems to be a slight increase in the average rating, given a large amount of user reviews. This seems to signify that a higher volume of user ratings may typically imply popularity, which could influence users to give higher ratings. However it is possible that this change could just be due to random variation, but given the large sample size of the entire data set, it can be safe to say that this slight change is relatively accurate without completely resampling the data set.</p>
+          </div>
+        </div>
+      </div>
+    <div class="col-lg-4 col-md-4">
+        <div class="card process">
+        <a href="assets/k-means/Rating%20vs%20%23%20of%20Checkins.png" data-toggle="lightbox">
+        <img src = "assets/k-means/Rating%20vs%20%23%20of%20Checkins.png" style="width:100%;" />
+        </a>
+          <div class="card-caption">
+            <h6>K-Means Plot of the ratings of each of the business versus the number of checkins for the entire dataset.</h6>
+            <p style="font-style: italic;">
+            1st cluster - 3.6618, 13,304, K = 2<br />
+            2nd cluster - 3.6949 98.7103, K = 28
+            </p>
+            <p>For the second cluster of data we found that rating and the number of Check-ins have no significant impact on each other. Both data clusters gave a similar rating average despite the second cluster having a significant amount of check-ins per business.It can definately be said that one can conclude nothing from the clustering due to the apparent lack of variation among the data fields.</p>
+          </div>
+        </div>
+      </div>
       <div class="col-lg-4 col-md-4">
         <div class="card process">
         <a href="assets/k-means/Num%20of%20Reviews%20vs%20%23%20of%20Checkins.png" data-toggle="lightbox">
         <img src = "assets/k-means/Num%20of%20Reviews%20vs%20%23%20of%20Checkins.png" style="width:100%;" />
         </a>
           <div class="card-caption">
-            <p>K-Means Plot of the number of reviews versus the number of checkins for the entire dataset.</p>
+            <h6>K-Means Plot of the number of reviews versus the number of checkins for the entire dataset.</h6>
+            <p style="font-style: italic;">
+            1st cluster - 1,940.7, 13,303, K = 2<br />
+            2nd cluster - 32.8421, 98.7113, K = 30
+            </p>
+            <p>For the third data set it can be seen from the first cluster that a large amount of reviews result in significantly large amounts of check-ins and from the second cluster a small amount of reviews result in smaller amounts of check ins. This can be easily explained as typically popular business are promoted to incentivize their customers to check-in for some added benefit. Another aspect that this clustering uncovers is the disparity between popular and unpopular businesses, that the difference is vast enough to be extremely polarizing.</p>
           </div>
         </div>
       </div>
-      <div class="col-lg-4 col-md-4">
-        <div class="card process">
-        <a href="assets/k-means/Rating%20vs%20%23%20of%20Checkins.png" data-toggle="lightbox">
-        <img src = "assets/k-means/Rating%20vs%20%23%20of%20Checkins.png" style="width:100%;" />
-        </a>
-          <div class="card-caption">
-            <p>K-Means Plot of the ratings of each of the business versus the number of checkins for the entire dataset.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-4">
-        <div class="card process">
-          <a href="assets/k-means/Rating%20vs%20%23%20of%20Reviews.png" data-toggle="lightbox">
-          <img src = "assets/k-means/Rating%20vs%20%23%20of%20Reviews.png" style="width:100%;" />
-          </a>
-          <div class="card-caption">
-            <p>K-Means Plot of the ratings of each of the business versus the number of reviews for the entire dataset.</p>
-          </div>
-        </div>
-      </div>
+      
+      
     </div>
 
     <div class="row wow fadeInUp">
