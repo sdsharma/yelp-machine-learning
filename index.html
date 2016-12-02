@@ -128,6 +128,94 @@
           </div>
         </div>
     </div>
+    <div class="col-lg-4 col-md-4">
+      <div class="card process">
+          <h3>4. Parsing the Data (Conceptual)</h3>
+          <div class="card-caption">
+            <p>Conceptually what we want to do is first parse through all of the check-in data provided by Yelp, and for each business get the total amount of check-ins that occur throughout the entire history of the business, and then finally map them to the business id in the object format {business_id: total_checkins}. From there we can parse through the businesses data and at each value map the business id provided to the newly parsed check-ins file to get total check-ins and create an object for each business in the format {business_id: [rating, review_count, total_checkins]}. This process can also be modified to only include certain cities by only choosing to log businesses that have a matching 'city' parameter in their object definition. Now that we have a JSON object that represents all important data for us it has to be brought into a useable MATLAB format to run K-means clustering algorithms on for analysis. This is achieved using the JSONlab plugin for MATLAB that converts the JSON sting into a structure format representing all the data. Finally this structure has to be parsed one at a time and account for null data entries (when there are no recorded check-ins) and then create a usable a matrix format of just relevant data.</p>
+          </div>
+      </div>
+    </div>
+    </div>
+    <div class="row">
+      <div class = "col-lg-4 col-md-4">
+         <div class="card process">
+          <h3>5. Parsing the Check-ins</h3>
+          <div class="card-caption">
+            <pre><code>
+/*Create a usable data format of {businessid: total checkins}*/
+var fs = require('fs');
+
+var checkIns = {};
+var checkInRaw = fs.readFileSync('../data/yelp_academic_dataset_checkin.json', 'utf8').toString().split("\n");
+for (var j = 0; j < checkInRaw.length -1; j++){
+  checkInRaw[j] = JSON.parse(checkInRaw[j]);
+  var totalCheckIns = 0;
+  var keys = Object.keys(checkInRaw[j].checkin_info);
+  var businessKey = checkInRaw[j].business_id;
+  for(var i = 0; i < keys.length; i++){
+    totalCheckIns += checkInRaw[j].checkin_info[keys[i]];
+  }
+  checkIns[businessKey] = totalCheckIns;
+}
+
+fs.writeFile('../data/yelp_checkins.json', JSON.stringify(checkIns, null, 2), function(err){
+  if(err){
+    return console.log(err);
+  }
+});
+            </code></pre>
+          </div>
+      </div>
+      </div>
+      <div class = "col-lg-4 col-md-4">
+         <div class="card process">
+          <h3>6. Parsing the Businesses</h3>
+          <div class="card-caption">
+            <pre><code>
+/*Create a usable data format of {businessid: [rating, review count, checkin count]}*/
+var fs = require('fs');
+
+var businesses = {};
+var businessesRaw = fs.readFileSync('../data/yelp_academic_dataset_business.json', 'utf8').toString().split("\n");
+var checkins = JSON.parse(fs.readFileSync('../data/yelp_checkins.json', 'utf8'));
+for (var j = 0; j < businessesRaw.length - 1; j++){
+  businessesRaw[j] = JSON.parse(businessesRaw[j]);
+  businesses[businessesRaw[j].business_id] = [businessesRaw[j].stars, businessesRaw[j].review_count, checkins[businessesRaw[j].business_id]];
+}
+
+fs.writeFile('../data/yelp_businesses_all.json', JSON.stringify(businesses, null, 2), function(err){
+  if(err){
+    return console.log(err);
+  }
+});
+            </code></pre>
+          </div>
+      </div>
+      </div>
+      <div class = "col-lg-4 col-md-4">
+         <div class="card process">
+          <h3>7. Parsing the JSON</h3>
+          <div class="card-caption">
+            <pre><code>
+function return_mat = RemoveNulls(input)
+    result_cells = struct2cell(input(1,1));
+    return_mat = [];
+
+    for i=1:length(result_cells)
+        try
+            cell = cell2mat(result_cells(i));
+        catch
+            result_cells{i,1}{3} = 0;
+            cell = cell2mat(result_cells{i});
+        end
+        return_mat = [return_mat; cell];
+    end
+end
+            </code></pre>
+          </div>
+      </div>
+      </div>
     </div>
     
     <!-- Including Bootstrap JS (with its jQuery dependency) so that dynamic components work -->
