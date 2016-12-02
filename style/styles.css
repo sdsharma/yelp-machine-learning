@@ -12,6 +12,7 @@ h1{
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     background-color: #fff;
+    padding: 8px;
 }
 
 .card:hover {
@@ -40,4 +41,14 @@ h1{
 
 .process{
   padding-top: 2px;
+}
+
+h3{
+  padding: 8px;
+}
+code{
+  text-align: left;
+}
+.row{
+  padding-bottom: 20px;
 }

@@ -9,7 +9,10 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style/styles.css"
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/default.min.css">
+    <link rel="stylesheet" href="style/dracula.css">
+    <link rel="stylesheet" href="style/styles.css">
+    
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -43,18 +46,95 @@
       </div>
     </div>
     <h2>The Process</h2>
-    <div class="col-lg-3 col-md-6">
+    <div class="row">
+    <div class="col-lg-4 col-md-12">
       <div class="card process">
           <h3>1. Obtain Relevant Data</h3>
           <div class="card-caption">
-            <p>chart captioned</p>
+            <p>To download the Yelp Dataset you first have to register to join their dataset challenge on their site linked <a href="https://www.yelp.com/dataset_challenge">here.</a> This allows you to choose from the businesses, check-ins, users, tips, and photos datasources, each of which is stored in JSON format. For this project we needed to obtain the businesses and check-ins files to get the amount of checkins associated with each businesses throughout the times provided, and correlate that to the business rating and review count that is specified in the businesses file.</p>
           </div>
         </div>
     </div>
+    
+    <div class="col-lg-8 col-md-12">
+      <div class="card process">
+          <h3>2. Check-ins Data Format</h3>
+          <div class="card-caption">
+          <div class="row">
+          <div class="col-lg-4 col-md-4">
+          <p>From this sample provided by Yelp, what we can see is that the check-ins file provides a daily breakdown at hourly time intervals to show the checkins that occured throughout the week on each day and time in the entire businesses history of being on Yelp. Out of this information what we en dup being most concerned in is the encypted business id (business_id) which allows us to uniquely identify a business and the sum total of all the checkins that occur throughout the history of the business which can be pulled from the array representing the breakdown of all check-in information (checkin_info).</p>
+          </div>
+          <div class="col-lg-8 col-md-8">
+          <pre><code>
+{
+  'type': 'checkin',
+  'business_id': (encrypted business id),
+  'checkin_info': {
+      '0-0': (number of checkins from 00:00 to 01:00 on all Sundays),
+      '1-0': (number of checkins from 01:00 to 02:00 on all Sundays),
+      ...
+      '14-4': (number of checkins from 14:00 to 15:00 on all Thursdays),
+      ...
+      '23-6': (number of checkins from 23:00 to 00:00 on all Saturdays)
+  }, # if there was no checkin for a hour-day block it will not be in the dict
+}
+          </code></pre>
+          </div>
+          </div>  
+          </div>
+        </div>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-lg-8 col-md-8">
+      <div class="card process">
+          <h3>3. Businesses Data Format</h3>
+          <div class="card-caption">
+          <div class="row">
+          <div class="col-lg-8 col-md-8">
+            <pre><code>
+{
+  'type': 'business',
+  'business_id': (encrypted business id),
+  'name': (business name),
+  'neighborhoods': [(hood names)],
+  'full_address': (localized address),
+  'city': (city),
+  'state': (state),
+  'latitude': latitude,
+  'longitude': longitude,
+  'stars': (star rating, rounded to half-stars),
+  'review_count': review count,
+  'categories': [(localized category names)]
+  'open': True / False (corresponds to closed, not business hours),
+  'hours': {
+      (day_of_week): {
+          'open': (HH:MM),
+          'close': (HH:MM)
+      },
+      ...
+  },
+  'attributes': {
+      (attribute_name): (attribute_value),
+      ...
+  },
+}
+            </code></pre>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <p>From this sample provided by Yelp, what we can see is that the businesses file provides basic information like the type of business its name, neighborhood, address, city, state, etc. But for our project the main concern was the encrypted business id (business_id), the city (city), the business ratings (stars), and the amount of reviews provided for the restaurant (review_count). From this information we can get identify a business in a specific city that we have chosen to represent either a large metropolitan area or smaller suburban township, and map that to the number of check-ins that have been logged, as well as provide the corresponding rating and review count totals.</p>
+            </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    </div>
+    
     <!-- Including Bootstrap JS (with its jQuery dependency) so that dynamic components work -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
     <script src="js/app.js"></script>
   </body>
 </html>
