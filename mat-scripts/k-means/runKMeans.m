@@ -17,6 +17,7 @@ Kmus=X(rndinds(1:K),:);
 maxiters=1000;
 
 for iter=1:maxiters
+    disp(iter)
     %assign each data vector to closest mu vector as per Bishop (9.2)
     %do this by first calculating a squared distance matrix where the n,k entry
     %contains the squared distance from the nth data vector to the kth mu vector
@@ -47,7 +48,7 @@ for iter=1:maxiters
 
     %check to see if the cluster centers have converged.  If so, break.
     if sum(abs(KmusOld(:)-Kmus(:)))<1e-6
-        disp(iter);
+        disp(Kmus);
         break
     end
 end
