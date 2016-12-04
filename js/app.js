@@ -33,7 +33,7 @@ for (var x = 0; x < axisMax; x+=axisStep) {
 // specify options
 var options = {
     width:  '100%',
-    height: '550px',
+    height: '450px',
     style: 'surface',
     showPerspective: true,
     showGrid: true,
