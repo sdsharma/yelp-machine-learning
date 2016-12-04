@@ -39,8 +39,16 @@
     <div class="row wow fadeInUp">
       <div class="col-lg-6 col-md-6">
         <div class="card">
+          <h3>Full Dataset Rating Predictor</h3>
+          <div ng-app="ratingCalculator" class="card-caption">
+            <rating-calculator></rating-calculator>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6">
+        <div class="card">
           <div id="chart"></div>
-          <h3>3D Surface Plot of Linear Planar Fit</h3>
+          <h3>3D Surface Plot of Linear Planar Fit - Full Dataset</h3>
           <div class="card-caption">
             <p style="font-style: italic;">
             f(x,y) = 3.688 + -0.00003891x + 0.0003306y<br />
@@ -49,17 +57,33 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-6 col-md-6">
-        <div class="card">
-          <h3>Full Dataset Rating Predictor</h3>
-          <div ng-app="ratingCalculator" class="card-caption">
-            <rating-calculator></rating-calculator>
-          </div>
-        </div>
-      </div>
     </div>
 
     <div class="row wow fadeInUp">
+      <div class="col-lg-6 col-md-6">
+        <div class="card">
+          <div id="subchart"></div>
+          <h3>3D Surface Plot of Linear Planar Fit - Suburban Areas</h3>
+          <div class="card-caption">
+            <p style="font-style: italic;">
+            f(x,y) = 3.681 + -0.002632x + 0.00489y<br />
+            where x = number of check-ins and y = number of reviews
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6">
+        <div class="card">
+          <div id="metrochart"></div>
+          <h3>3D Surface Plot of Linear Planar Fit - Metropolitan Areas</h3>
+          <div class="card-caption">
+            <p style="font-style: italic;">
+            f(x,y) = 3.668 + -0.00002353x + 0.0002426y<br />
+            where x = number of check-ins and y = number of reviews
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
     
     <div class="row wow fadeInUp">
@@ -577,7 +601,7 @@ end</code></pre>
           <img src = "assets/plots/3DcurveFit.png" style="width:100%;" />
           </a>
           <div class="card-caption">
-            <p>Fitting a linear plane equation to the entire dataset to find a rating based on the input of review count and checkin count.</p>
+            <p>Fitting a linear plane equation to the entire dataset to find a rating based on the input of review count and checkin count. This process was replicated for both Suburban and Metropolitan areas as well to get unique equations for each.</p>
           </div>
         </div>
       </div>
