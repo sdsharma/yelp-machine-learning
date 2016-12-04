@@ -8,7 +8,15 @@
         scope.reviews = 0;
 
         scope.calculateRating = function(checkIns, reviews) {
-            return( 3.688 + -0.00003891*checkIns + 0.0003306*reviews );
+            var result = 3.688 + -0.00003891*checkIns + 0.0003306*reviews
+
+            if(result < 1) {
+                result = 1;
+            } else if (result > 5) {
+                result = 5;
+            }
+            
+            return result;
         }
 
         scope.starLevel = function(num) {
