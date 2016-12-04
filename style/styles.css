@@ -77,3 +77,8 @@ h3{
 code{
   text-align: left;
 }
+input{
+    border: 2px solid #D32323;
+    border-radius: 4px;
+    width: 80px;
+}

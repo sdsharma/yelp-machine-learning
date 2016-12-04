@@ -1,6 +1,6 @@
 <div ng-controller="CalculatorController">
 
-  <p>Number of Check-ins: <input ng-model="checkins" ng-pattern="number" type="number"></p>
+  <p style="padding-right: 12px;">Number of Check-ins: <input ng-model="checkins" ng-pattern="number" type="number"></p>
   <p>Number of Reviews: <input ng-model="reviews" ng-pattern="number" type="number"></p>
 
   <div class="rating rating-{{starLevel(calculateRating(checkins, reviews))}}">
@@ -14,7 +14,7 @@
     
   </div>
 
-  <p>{{calculateRating(checkins, reviews)}}</p>
+  <p style="font-style: italic;">Raw Rating: {{calculateRating(checkins, reviews)}}</p>
 
   <style>
     body {
