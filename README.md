@@ -1,5 +1,5 @@
 # yelp-machine-learning
-A machine learning project for COGS 118B utilizing the Yelp Dataset
+A machine learning project utilizing the Yelp Dataset
 
 By:
  * Shivam Sharma
