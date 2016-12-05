@@ -6,9 +6,21 @@
     .controller('CalculatorController', ['$scope', function(scope) {
         scope.checkins = 0;
         scope.reviews = 0;
+        scope.formulaType="full"
 
         scope.calculateRating = function(checkIns, reviews) {
-            var result = 3.688 + -0.00003891*checkIns + 0.0003306*reviews
+            var result = 0;
+            switch(scope.formulaType) {
+                case "full":
+                    result = 3.688 + -0.00003891*checkIns + 0.0003306*reviews;
+                    break;
+                case "city":
+                    result = 3.668 + -0.00002353*checkIns + 0.0002426*reviews;
+                    break;
+                case "suburb":
+                    result = 3.681 + -0.002632*checkIns + 0.00489*reviews;
+                    break;
+            }
 
             if(result < 1) {
                 result = 1;
