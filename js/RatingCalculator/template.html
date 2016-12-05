@@ -1,7 +1,30 @@
-<div ng-controller="CalculatorController">
+<div class="row" ng-controller="CalculatorController">
+  <div >
+  </div>
+  <div class="col-md-6">
+    <p style="padding-right: 12px;">Number of Check-ins: <input ng-model="checkins" ng-pattern="number" type="number" min="0" step="1"></p>
+    <p>Number of Reviews: <input ng-model="reviews" ng-pattern="number" type="number" min="0" step="1"></p>
+  </div>
 
-  <p style="padding-right: 12px;">Number of Check-ins: <input ng-model="checkins" ng-pattern="number" type="number" min="0" step="1"></p>
-  <p>Number of Reviews: <input ng-model="reviews" ng-pattern="number" type="number" min="0" step="1"></p>
+  <div class="col-md-6">
+    <form action="">
+      <label>
+        <input type="radio" ng-model="formulaType" value="full">
+        Full Dataset Predictor
+      </label>
+      <br>
+      <label>
+        <input type="radio" ng-model="formulaType" value="city">
+        Large City/Metropolitan Dataset Predictor
+      </label>
+      <br>
+      <label>
+        <input type="radio" ng-model="formulaType" value="suburb">
+        Small City/Suburban Dataset Predictor
+      </label>
+    </form>
+  </div>
+
 
   <div class="rating rating-{{starLevel(calculateRating(checkins, reviews))}}">
 
