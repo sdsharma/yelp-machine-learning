@@ -14,11 +14,11 @@
                 case "full":
                     result = 3.688 + -0.00003891*checkIns + 0.0003306*reviews;
                     break;
-                case "city":
-                    result = 3.668 + -0.00002353*checkIns + 0.0002426*reviews;
-                    break;
                 case "suburb":
                     result = 3.681 + -0.002632*checkIns + 0.00489*reviews;
+                    break;
+                case "metro":
+                    result = 3.668 + -0.00002353*checkIns + 0.0002426*reviews;
                     break;
             }
 
