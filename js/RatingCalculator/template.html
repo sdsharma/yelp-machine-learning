@@ -1,28 +1,14 @@
-<div class="row" ng-controller="CalculatorController">
-  <div >
-  </div>
-  <div class="col-md-6">
+<div ng-controller="CalculatorController">
+  <div>
+    <p>
+      <select ng-model="formulaType">
+        <option selected value="full">Full Dataset Predictor</option>
+        <option value="city">Large City/Metropolitan Dataset Predictor</option>
+        <option value="suburb">Small City/Suburban Dataset Predictor</option>
+      </select>
+    </p>
     <p style="padding-right: 12px;">Number of Check-ins: <input ng-model="checkins" ng-pattern="number" type="number" min="0" step="1"></p>
     <p>Number of Reviews: <input ng-model="reviews" ng-pattern="number" type="number" min="0" step="1"></p>
-  </div>
-
-  <div class="col-md-6">
-    <form action="">
-      <label>
-        <input type="radio" ng-model="formulaType" value="full">
-        Full Dataset Predictor
-      </label>
-      <br>
-      <label>
-        <input type="radio" ng-model="formulaType" value="city">
-        Large City/Metropolitan Dataset Predictor
-      </label>
-      <br>
-      <label>
-        <input type="radio" ng-model="formulaType" value="suburb">
-        Small City/Suburban Dataset Predictor
-      </label>
-    </form>
   </div>
 
 
