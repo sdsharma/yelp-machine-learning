@@ -1,7 +1,6 @@
 body{
 	background-color: #fffef4;
 	text-align: center;
-	padding: 20px;
   padding-bottom: 85px;
 }
 
@@ -35,6 +34,7 @@ li{
 }
 
 .title-nav{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
   position: fixed; 
   background-color: #D32323; 
   color: #fff; 

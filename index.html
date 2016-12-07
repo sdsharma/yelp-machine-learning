@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="style/ekko-lightbox.min.css">
     <link rel="stylesheet" href="style/animate.css">
     <link rel="stylesheet" href="style/styles.css">
+    <link rel="stylesheet" href="style/sidebar.css">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     
     <script src="js/angular.min.js"></script>
@@ -30,13 +31,47 @@
     <![endif]-->
   </head>
   <body>
+    <div id="wrapper" class="toggled">
+      <!-- Sidebar -->
+      <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+          <li class="sidebar-brand">
+            <a href="#">
+              Start Bootstrap
+            </a>
+          </li>
+          <li>
+              <a href="#">Dashboard</a>
+          </li>
+          <li>
+              <a href="#">Shortcuts</a>
+          </li>
+          <li>
+              <a href="#">Overview</a>
+          </li>
+          <li>
+              <a href="#">Events</a>
+          </li>
+          <li>
+              <a href="#">About</a>
+          </li>
+          <li>
+              <a href="#">Services</a>
+          </li>
+          <li>
+              <a href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+
+
     <div class="title-nav">
       <div>
         <h1><img src="assets/yelp_logo_crop.png" alt="Yelp" style="max-height: 1.5em;vertical-align: text-bottom;"> Dataset Prediction Model</h1>
       </div>
     </div>
     <img src="assets/yelp_logo.png"class="floating-logo"/>
-    <div style="height: 90px;">
+    <div style="height: 120px;">
     </div>
     <div class="row wow fadeInUp">
       <div class="col-lg-12 col-md-12">
@@ -625,6 +660,8 @@ end</code></pre>
     <p>Created by <a href="http://shivam.info">Shivam Sharma</a>, <a href="https://wibow.io/">Kenny Wibowo</a>, Varun Sujit, and Joseph Thomas.</p>
     <p>All data and code used can be found in our public repository <a href="https://github.com/sdsharma/yelp-machine-learning">here</a>.</p>
     </div>
+
+    </div>
     <!-- Including Bootstrap JS (with its jQuery dependency) so that dynamic components work -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -633,5 +670,15 @@ end</code></pre>
     <script src="js/ekko-lightbox.min.js"></script>
     <script src="js/wow.min.js"></script>
     <script src="js/app.js"></script>
+
+    <script>
+
+      $("#menu-toggle").click(function(e) {
+          e.preventDefault();
+          $("#wrapper").toggleClass("toggled");
+      });
+    
+    </script>
+
   </body>
 </html>
