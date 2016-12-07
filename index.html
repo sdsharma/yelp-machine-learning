@@ -33,35 +33,33 @@
   <body>
     <div id="wrapper" class="">
       <div id="sidebar-wrapper">
-        <a href="#menu-toggle" class="btn btn-toggle" id="menu-toggle"><i class="glyphicon glyphicon-triangle-right"></i></a>
-        
+        <a href="#menu-toggle" class="btn btn-toggle" id="menu-toggle"><i style="font-size: 2em;" class="glyphicon glyphicon-menu-hamburger"></i></a>
+
         <div id="sidebar-nav-wrapper">
           <ul class="sidebar-nav text-left">
-            <li class="sidebar-brand">
-              <a href="#">
-                Start Bootstrap
-              </a>
+            <li>
+                <a href="#rating-predictor">Rating Predictor</a>
             </li>
             <li>
-                <a href="#">Dashboard</a>
+                <a href="#technical-walkthrough">Technical Walkthrough</a>
             </li>
             <li>
-                <a href="#">Shortcuts</a>
+                <a href="#k-means-full">Full K-Means Clustering</a>
             </li>
             <li>
-                <a href="#">Overview</a>
+                <a href="#k-means-suburb">Suburb K-Means Clustering</a>
             </li>
             <li>
-                <a href="#">Events</a>
+                <a href="#z-score-suburb">Suburb Z-Scored Data</a>
             </li>
             <li>
-                <a href="#">About</a>
+                <a href="#k-means-metro">Metropolitan K-Means Clustering</a>
             </li>
             <li>
-                <a href="#">Services</a>
+                <a href="#z-score-metro">Metropolitan Z-Scored Data</a>
             </li>
             <li>
-                <a href="#">Contact</a>
+                <a href="#curve-fit">Curve Fitting Data</a>
             </li>
           </ul>
         </div>
@@ -75,12 +73,13 @@
     </div>
 
     <img src="assets/yelp_logo.png"class="floating-logo"/>
-    <div style="height: 120px;">
-    </div>
+
+    <div style="height: 120px;"></div> <!-- Hacky buffer for fixed header -->
+
     <div class="row wow fadeInUp">
       <div class="col-lg-12 col-md-12">
         <div class="card">
-          <h3>Dataset Rating Predictor</h3>
+          <h3 class="anchor" id="rating-predictor">Dataset Rating Predictor</h3>
           <div ng-app="ratingCalculator" class="card-caption">
             <rating-calculator></rating-calculator>
           </div>
@@ -129,7 +128,7 @@
     </div>
     
     <div class="row wow fadeInUp">
-    <h2>Technical Walkthrough</h2>
+    <h2 class="anchor" id="technical-walkthrough">Technical Walkthrough</h2>
     <div class="col-lg-4 col-md-12">
       <div class="card process">
           <h3>1. Obtain Relevant Data</h3>
@@ -359,7 +358,7 @@ end</code></pre>
     </div>
 
     <div class="row wow fadeInUp">
-    <h2>Full Dataset K-Means</h2>
+    <h2 class="anchor" id="k-means-full">Full Dataset K-Means</h2>
     <div class="col-lg-4 col-md-4">
         <div class="card process">
           <a href="assets/k-means/Rating%20vs%20%23%20of%20Reviews.png" data-toggle="lightbox">
@@ -410,7 +409,7 @@ end</code></pre>
     </div>
 
     <div class="row wow fadeInUp">
-    <h2>Suburban Areas K-Means</h2>
+    <h2 class="anchor" id="k-means-suburb">Suburban Areas K-Means</h2>
       <div class="col-lg-4 col-md-4">
         <div class="card process">
         <a href="assets/k-means/smallcities_ratingVSnumreviews.png" data-toggle="lightbox">
@@ -456,7 +455,7 @@ end</code></pre>
     </div>
 
     <div class="row wow fadeInUp">
-    <h2>Suburban Areas Z-Scored Data</h2>
+    <h2 class="anchor" id="z-score-suburb">Suburban Areas Z-Scored Data</h2>
       <div class="col-lg-4 col-md-4">
         <div class="card process">
         <a href="assets/plots/belmont%20-%20review%20vs%20%23%20of%20checkins.png" data-toggle="lightbox">
@@ -523,7 +522,7 @@ end</code></pre>
     </div>
 
     <div class="row wow fadeInUp">
-    <h2>Metropolitan Areas K-Means</h2>
+    <h2 class="anchor" id="k-means-metro">Metropolitan Areas K-Means</h2>
       <div class="col-lg-4 col-md-4">
         <div class="card process">
         <a href="assets/k-means/largecities_ratingVSnumreviews.png" data-toggle="lightbox">
@@ -569,7 +568,7 @@ end</code></pre>
     </div>
 
     <div class="row wow fadeInUp">
-    <h2>Metropolitan Areas Z-Scored Data</h2>
+    <h2 class="anchor" id="z-score-metro">Metropolitan Areas Z-Scored Data</h2>
       <div class="col-lg-4 col-md-4">
         <div class="card process">
         <a href="assets/plots/charlotte%20-%20review%20vs%20%23%20of%20checkins.png" data-toggle="lightbox">
@@ -636,7 +635,7 @@ end</code></pre>
     </div>
     
     <div class="row wow fadeInUp">
-      <h2>Curve Fitting on Dataset</h2>
+      <h2 class="anchor" id="curve-fit">Curve Fitting on Dataset</h2>
       <div class="col-lg-12 col-md-12">
          <div class="card process">
           <a href="assets/plots/3DcurveFit.png" data-toggle="lightbox">
@@ -679,7 +678,6 @@ end</code></pre>
 
       $(document).ready(function() {
         $("#menu-toggle").click(function(e) {
-        console.log("boop");
           e.preventDefault();
           $("#wrapper").toggleClass("toggled");
         });

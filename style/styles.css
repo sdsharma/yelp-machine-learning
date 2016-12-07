@@ -67,6 +67,11 @@ li{
 	z-index: 1;
 }
 
+.anchor {
+  padding-top: 120px;
+  margin-top: -120px;
+}
+
 .process{
   padding-top: 2px;
 }
