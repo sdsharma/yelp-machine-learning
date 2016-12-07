@@ -41,6 +41,9 @@
                 <a href="#rating-predictor">Rating Predictor</a>
             </li>
             <li>
+                <a href="#pas">Project Abstract and Summary</a>
+            </li>
+            <li>
                 <a href="#technical-walkthrough">Technical Walkthrough</a>
             </li>
             <li>
@@ -60,6 +63,12 @@
             </li>
             <li>
                 <a href="#curve-fit">Curve Fitting Data</a>
+            </li>
+            <li>
+                <a href="#conclusion">Project Conclusion</a>
+            </li>
+            <li>
+                <a href="#postmortem">Project Postmortem</a>
             </li>
           </ul>
         </div>
@@ -87,7 +96,7 @@
       </div>
       
     </div>
-
+   
     <div class="row wow fadeInUp">
     <div class="col-lg-4 col-md-4">
         <div class="card">
@@ -126,7 +135,25 @@
         </div>
       </div>
     </div>
-    
+     <div class="row wow fadeInUp anchor" id="pas">
+      <div class="col-lg-6 col-md-6">
+        <div class="card">
+          <h3>Project Abstract</h3>
+          <div class="card-caption">
+            <p>Our main focus of this project will be developing a firm understanding of the correlation that exists between the check-ins at a restaurant using Yelp and the resulting reviews given to said restaurant. We plan to use two different forms of clustering algorithms on these datasets and then analyze the results to gain insight into how each one performs and the results they grant. This analysis will be organized into a series of interactive charts and mathematical explanations for each clustering algorithm to enhance our understanding of both data visualization and grouping. From these results we hope to better understand how people eat and the behaviors they engage in following their experience and present it in a meaningful form.</p>
+            <p>The way we will conduct this project at a technical level will be through three different parts. First, we will take the JSON data from Yelp and parse it into Matlab to get relevant information for our project, upon which we will run two separate clustering algorithms. Second, we will show this data in an easily readable and interactive means on a webpage using Vis.js to represent the relevant data in charts. Finally, we will develop web based calculators to extrapolate predictions of values using the clusters that we have found to estimate restuarant outcomes.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6">
+        <div class="card">
+          <h3>Project Summary</h3>
+          <div class="card-caption">
+            <p>We used Yelp, a service that provides customer-restaurant assessments to provide us a data set of ratings, check-ins (when a customer informs the platform that they visited a specific business), and written reviews as a way to correlate the relationships between those three variables and parse them through specific statistical algorithms, in this case, K-means clustering. We placed our results in a website for an easy, readable format. We divided our analysis into two sections, overall aggregate and selected city sub-sections. We also created a calculator in order to predict Yelp rating based on check-ins and number of written reviews.  We conducted this project because Yelp is a widely used platform for assessing businesses and we wanted to see if there was a possible way to predict trends and project values such as overall ratings to help small business set specific customer goals.</p>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="row wow fadeInUp">
     <h2 class="anchor" id="technical-walkthrough">Technical Walkthrough</h2>
     <div class="col-lg-4 col-md-12">
@@ -350,7 +377,7 @@ end</code></pre>
         <div class="card process">
         <h3>10. Plotting Our Data</h3>
           <div class="card-caption">
-            <p>Once we aggregated all of our data, we ran the K-means algorithm to determine any cluster trends across specific permutations of paired data sets. We determined this through what seemed to be most likely to give an obvious trend through observations of the paired sets. The data is displayed as follows for the overall aggregate.</p>
+            <p>Once we aggregated all of our data we ran the K-means clustering algorithm in MATLAB with our parsed data to determine any cluster trends across specific permutations of paired data sets. We determined this through what seemed to be most likely to give an obvious trend through observations of the paired sets. The data is displayed as follows for the overall and sub-sectioned aggregates.</p>
           </div>
         </div>
       </div>
@@ -421,6 +448,7 @@ end</code></pre>
             1st cluster - 3.7222, 75.1111, K = 2<br />
             2nd cluster - 3.6789, 9.5963, K = 5
             </p>
+            <p>For the first clusters of data it can be seen that the averages are much lower compared to the previous two data sets. This is probably indicative that smaller populations have smaller numbers of active users for yelp. The ratings for each cluster suggest that there is a higher concentration of similar ratings in smaller cities. This could be because smaller populations propagate opinions faster, leading to a growing similarity between user ratings of businesses.</p>
           </div>
         </div>
       </div>
@@ -435,6 +463,7 @@ end</code></pre>
             1st cluster - 3.6875, 15.6964, K = 2<br />
             2nd cluster - 3.6429, 184.9524, K = 8
             </p>
+            <p>For the second clusters of data, like all of the other respective cluster sets, the values in each cluster show little variation and are therefore no particular conclusions can be drawn from the specific set of clusters. But it can be seen from the similarity that Yelp activity is proportionally the same for users as concluded in the large cities cluster set.</p>
           </div>
         </div>
       </div>
@@ -449,6 +478,7 @@ end</code></pre>
             1st cluster - 69.6818, 180.8636, K = 2<br />
             2nd cluster - 11.6009, 15.3408, K = 7
             </p>
+            <p>For the third clusters of data, again, population seems to be affecting values of each cluster, the averages for the smaller data set is significantly smaller indicating that in smaller cities there are less users and possibly less restaurants available for review.</p>
           </div>
         </div>
       </div>
@@ -534,6 +564,7 @@ end</code></pre>
             1st cluster - 3.8218, 1,224.98, K = 2<br />
             2nd cluster - 3.6737, 35.3996, K = 29
             </p>
+            <p>For the first clusters of data it is apparent that it resembles the values of the overall data set with slight variation, the values for each cluster seem to be slightly lower, especially the rating values. Each cluster seems to have a higher value of number of reviews, this is expected due to the large populations found in metropolitan cities.</p>
           </div>
         </div>
       </div>
@@ -548,6 +579,7 @@ end</code></pre>
             1st cluster - 3.6786, 14,568, K = 2<br />
             2nd cluster - 3.6750, 134.8531, K = 17
             </p>
+            <p>For the second clusters of data we found that the values are once again, similar to its overall counterpart. Ratings compared to number of check-ins seem to be similar additionally with the small cities data set. This seems to suggest that population numbers don’t necessarily affect yelp activity for users.</p>
           </div>
         </div>
       </div>
@@ -562,6 +594,7 @@ end</code></pre>
             1st cluster - 42.8709, 134.6624, K = 2<br />
             2nd cluster - 2117.4, 14,438, K = 17
             </p>
+            <p>For the third clusters of data it can be seen once again that due to a higher population found in cities, that all values in each cluster are higher than the overall data set. The same trends noticed in the overall set are apparent in this set of clusters as well.</p>
           </div>
         </div>
       </div>
@@ -648,12 +681,32 @@ end</code></pre>
       </div>
     </div>
 
-    <div class="row wow fadeInUp">
+    <div class="row wow fadeInUp anchor" id="conclusion">
+      <div class="col-lg-12 col-md-12">
+         <div class="card process">
+         <h3>Project Conclusion</h3>
+          <div class="card-caption">
+          <div class="row">
+          <div class="col-lg-6 col-md-6">
+          <p>If we were to improve this project we would aggregate more data from other cities, the larger the sample, the more indicative observed trends would be in terms of all the users of Yelp. We would also utilize different clustering algorithms such as spectral clustering and mixture gaussian distributions in order to find out other possible patterns and conclusions to be drawn from the data.</p>
+          </div>
+          <div class="col-lg-6 col-md-6">
+          <p>From the analysis of all data sets we learned that population is a factor in the trends of ratings, check-ins, and reviews. However, it can also be seen that the changes are also very slight, showing that it is not as important as we previously thought. Overall, there is a trend that large amounts of user reviews indicate higher average ratings of restaurants as well as for check ins. Activity of users towards a particular business is a positive trend: the more users interact with a business’ Yelp page, the more likely the business is to receive higher values in check-ins reviews and ratings.</p>
+          </div>
+          </div>
+            
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row wow fadeInUp anchor" id="postmortem">
       <div class="col-lg-12 col-md-12">
          <div class="card process">
          <h3>Project Postmortem</h3>
           <div class="card-caption">
-            <p>Throughout our project we experienced several problems in conducting our algorithms. Our first problem was that though the Yelp data set was supposed to be in a JSON format, the actual contents of the data set were not formatted correctly placing extra work on us to parse through the data into a readable MATLAB format. Our solution to fix this problem was to use three separate parsing algorithms, one for parsing through associated business id’s and check-ins along with the check-in data, another for parsing through associated business id’s and reviews and ratings, and another for associating the business id’s with all of the other variables. This was an extremely difficult challenge for us to overcome, as the data was additionally formatted horribly. For example, Las Vegas had eight different identifiers(Las Vegas, las vegas, las Vegas, NV) which made it difficult to condense into one identifier given the other set of difficulties we had in the JSON file. Our second problem that we encountered was us dealing with buggy MATLAB builds that made our code not work despite it being syntactically correct. We had to restart MATLAB to resolve this. We found that our original data sub-sections did not display any obvious trends, so we decided to combine all of categories to find overall patterns in the biggest possible scope. This meant combining all city data into one large aggregate. We also tried to plot the data over 3 dimensions, but the result was nothing of significant value.</p>
+            <p>Throughout our project we experienced several problems in conducting our algorithms. Our first problem was that though the Yelp data set was supposed to be in a JSON format, the actual contents of the data set were not formatted correctly as instead of being one large contiguous object, it was line separated JavaScript Objects, placing extra work on us to parse through the data before it could even be brought into a readable MATLAB format. Our solution to fix this problem was to use three separate parsing algorithms, one for parsing through associated business id’s and check-ins along with the check-in data, another for parsing through associated business id’s and reviews and ratings, and another for associating the business id’s with all of the other variables. This was an extremely difficult challenge for us to overcome, as the data was additionally formatted horribly. For example, Las Vegas had eight different identifiers(Las Vegas, las vegas, las Vegas, NV, etc.) which made it difficult to condense into one identifier given the other set of difficulties we had in the JSON file. Our second problem that we encountered was us dealing with buggy MATLAB builds that made our code not work despite it being syntactically correct. We had to restart MATLAB many times to resolve this at each iteration of our process. We found that our original data sub-sections did not display any significant obvious trends, so we decided to combine all of categories to find overall patterns in the biggest possible scope and to compare them with our sub-sectioned data. This meant combining all city data into one large aggregate. We also had issues with finding a good geometric fit for our data plots, we resolved this by using the curve-fitting toolbox from MATLAB to create a regression plane from the plot.</p>
           </div>
         </div>
       </div>
