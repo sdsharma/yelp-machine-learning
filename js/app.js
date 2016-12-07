@@ -39,7 +39,10 @@ var options = {
     showGrid: true,
     showShadow: false,
     keepAspectRatio: true,
-    verticalRatio: 0.7
+    verticalRatio: 0.7,
+    interaction: {
+        zoomView: false
+    }
 };
 
 // Instantiate our graph object.
