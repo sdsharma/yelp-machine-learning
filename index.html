@@ -31,45 +31,49 @@
     <![endif]-->
   </head>
   <body>
-    <div id="wrapper" class="toggled">
-      <!-- Sidebar -->
+    <div id="wrapper" class="">
       <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-          <li class="sidebar-brand">
-            <a href="#">
-              Start Bootstrap
-            </a>
-          </li>
-          <li>
-              <a href="#">Dashboard</a>
-          </li>
-          <li>
-              <a href="#">Shortcuts</a>
-          </li>
-          <li>
-              <a href="#">Overview</a>
-          </li>
-          <li>
-              <a href="#">Events</a>
-          </li>
-          <li>
-              <a href="#">About</a>
-          </li>
-          <li>
-              <a href="#">Services</a>
-          </li>
-          <li>
-              <a href="#">Contact</a>
-          </li>
-        </ul>
-      </div>
+        <a href="#menu-toggle" class="btn btn-toggle" id="menu-toggle"><i class="glyphicon glyphicon-triangle-right"></i></a>
+        
+        <div id="sidebar-nav-wrapper">
+          <ul class="sidebar-nav text-left">
+            <li class="sidebar-brand">
+              <a href="#">
+                Start Bootstrap
+              </a>
+            </li>
+            <li>
+                <a href="#">Dashboard</a>
+            </li>
+            <li>
+                <a href="#">Shortcuts</a>
+            </li>
+            <li>
+                <a href="#">Overview</a>
+            </li>
+            <li>
+                <a href="#">Events</a>
+            </li>
+            <li>
+                <a href="#">About</a>
+            </li>
+            <li>
+                <a href="#">Services</a>
+            </li>
+            <li>
+                <a href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
 
+      </div>
 
     <div class="title-nav">
       <div>
         <h1><img src="assets/yelp_logo_crop.png" alt="Yelp" style="max-height: 1.5em;vertical-align: text-bottom;"> Dataset Prediction Model</h1>
       </div>
     </div>
+
     <img src="assets/yelp_logo.png"class="floating-logo"/>
     <div style="height: 120px;">
     </div>
@@ -673,10 +677,13 @@ end</code></pre>
 
     <script>
 
-      $("#menu-toggle").click(function(e) {
+      $(document).ready(function() {
+        $("#menu-toggle").click(function(e) {
+        console.log("boop");
           e.preventDefault();
           $("#wrapper").toggleClass("toggled");
-      });
+        });
+      })
     
     </script>
 
